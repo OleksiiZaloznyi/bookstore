@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-new-column-to-book-table
+      author: root
+      changes:
+        - addColumn:
+            tableName: book
+            columns:
+              - column:
+                  name: new
+                  type: varchar(255)

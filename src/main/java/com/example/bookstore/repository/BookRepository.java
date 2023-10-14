@@ -1,14 +1,10 @@
 package com.example.bookstore.repository;
 
 import com.example.bookstore.model.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
-//    Book save(Book book);
-//
-//    Optional<Book> findById(Long id);
-//
-//    List<Book> findAll();
+
+    List<Book> findAllByTitleContainsIgnoreCase(String name);
 }

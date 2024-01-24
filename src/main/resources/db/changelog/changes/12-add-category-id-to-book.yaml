@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-category-id-to-book
+      author: root
+      changes:
+        - addColumn:
+            tableName: book
+            columns:
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: true
+                    foreignKeyName: FK_book_category
+                    references: category(id)

@@ -1,15 +1,13 @@
 package com.example.bookstore.dto.book;
 
-import com.example.bookstore.model.Category;
-import com.example.bookstore.validator.PriceMin;
 import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
-public class BookDto {
+@RequiredArgsConstructor
+public class BookDtoWithoutCategoryIds {
     private Long id;
     @NotNull
     private String title;
@@ -18,10 +16,8 @@ public class BookDto {
     @NotNull
     private String isbn;
     @NotNull
-    @PriceMin
     private BigDecimal price;
     private String description;
     private String coverImage;
-    private Set<Category> categories = new HashSet<>();
-    private Set<Long> categoryIds;
+
 }
